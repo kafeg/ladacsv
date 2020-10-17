@@ -167,7 +167,7 @@ func parsePrices(g *geziyor.Geziyor, r *client.Response) {
 		komplName = strings.Replace(komplName, "  ", " ", 100)
 		komplName = strings.Replace(komplName, "  ", " ", 100)
 		komplName = strings.Replace(komplName, "  ", " ", 100)
-		komplName = strings.Replace(komplName, ",", " ", 100)
+		komplName = strings.Replace(komplName, ",", "", 100)
 
 		// open output file
 		fo, err := os.OpenFile(optOutputFileName, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
