@@ -27,7 +27,7 @@ fi
 # Granta
 ./ladacsv -session=$SESSIONID -model=granta/sedan -out=granta_sedan.csv
 ./ladacsv -session=$SESSIONID -model=granta/liftback -out=granta_liftback.csv
-./ladacsv -session=$SESSIONID -model=granta/hatchback -out=grant_hatchback.csv
+./ladacsv -session=$SESSIONID -model=granta/hatchback -out=granta_hatchback.csv
 ./ladacsv -session=$SESSIONID -model=granta/universal -out=granta_universal.csv
 ./ladacsv -session=$SESSIONID -model=granta/cross -out=granta_cross.csv
 ./ladacsv -session=$SESSIONID -model=granta/school -out=granta_school.csv

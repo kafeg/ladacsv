@@ -114,6 +114,7 @@
                     <div id="error" class="alert alert-danger lead text-center hidden"></div>
                     <table id="csv-table" class="table table-bordered table-striped table-condensed"></table>
 					© <a href="https://github.com/kafeg" target="_blank">https://github.com/kafeg</a>. Viewer based on <a href="https://github.com/wincelau/html-csv-viewer">https://github.com/wincelau/html-csv-viewer</a>
+					<br/>
 					
 					<!-- Yandex.Metrika informer -->
 					<a href="https://metrika.yandex.ru/stat/?id=68405578&amp;from=informer"
