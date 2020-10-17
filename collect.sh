@@ -56,8 +56,8 @@ COLLECT_TS=`date --iso-8601=seconds`
 ./ladacsv -session=$SESSIONID -model=4x4/urban5 -out=n4x4_5doors_urban.csv
 
 rm -f csvlada.html
-cp csvlada.html.template csvlada.html
+cp csvlada.html.template index.html
 
-sed -i "s/UPDATE_TS/${COLLECT_TS}/g" csvlada.html
+sed -i "s/UPDATE_TS/${COLLECT_TS}/g" index.html
 
 
