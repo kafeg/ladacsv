@@ -16,8 +16,6 @@ if [ -z $SESSIONID ]; then
     exit 1
 fi
 
-COLLECT_TS=`date --iso-8601=seconds`
-
 # Vesta
 ./ladacsv -session=$SESSIONID -model=vesta/sedan -out=vesta_sedan.csv
 ./ladacsv -session=$SESSIONID -model=vesta/cross -out=vesta_cross.csv
@@ -54,6 +52,8 @@ COLLECT_TS=`date --iso-8601=seconds`
 ./ladacsv -session=$SESSIONID -model=4x4/5dv -out=n4x4_5doors.csv
 ./ladacsv -session=$SESSIONID -model=4x4/urban -out=n4x4_3doors_urban.csv
 ./ladacsv -session=$SESSIONID -model=4x4/urban5 -out=n4x4_5doors_urban.csv
+
+COLLECT_TS=`date --iso-8601=seconds`
 
 rm -f csvlada.html
 cp csvlada.html.template index.html

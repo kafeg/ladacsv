@@ -66,7 +66,7 @@
 						<br/>
 						<!--Vesta-->
 						Vesta:
-						<a href="#vesta_sedan.csv" onclick="setTimeout(location.reload.bind(location), 1)">седан</a> / 
+						<a href="#vesta_sedan.csv" onclick="setTimeout(location.reload.bind(location), 1)">Седан</a> / 
 						<a href="#vesta_cross.csv" onclick="setTimeout(location.reload.bind(location), 1)">Cross</a> / 
 						<a href="#vesta_sw.csv" onclick="setTimeout(location.reload.bind(location), 1)">SW</a> / 
 						<a href="#vesta_sw_cross.csv" onclick="setTimeout(location.reload.bind(location), 1)">SW Cross</a> / 
@@ -75,12 +75,12 @@
 						<br/>
 						<!--Granta-->
 						Granta:
-						<a href="#granta_sedan.csv" onclick="setTimeout(location.reload.bind(location), 1)">седан</a> / 
-						<a href="#granta_liftback.csv" onclick="setTimeout(location.reload.bind(location), 1)">лифтбек</a> / 
-						<a href="#granta_hatchback.csv" onclick="setTimeout(location.reload.bind(location), 1)">хэтчбек</a> / 
-						<a href="#granta_universal.csv" onclick="setTimeout(location.reload.bind(location), 1)">универсал</a> / 
+						<a href="#granta_sedan.csv" onclick="setTimeout(location.reload.bind(location), 1)">Седан</a> / 
+						<a href="#granta_liftback.csv" onclick="setTimeout(location.reload.bind(location), 1)">Лифтбек</a> / 
+						<a href="#granta_hatchback.csv" onclick="setTimeout(location.reload.bind(location), 1)">Хэтчбек</a> / 
+						<a href="#granta_universal.csv" onclick="setTimeout(location.reload.bind(location), 1)">Универсал</a> / 
 						<a href="#granta_cross.csv" onclick="setTimeout(location.reload.bind(location), 1)">Cross</a> / 
-						<a href="#granta_school.csv" onclick="setTimeout(location.reload.bind(location), 1)">учебная</a> / 
+						<a href="#granta_school.csv" onclick="setTimeout(location.reload.bind(location), 1)">Учебная</a> / 
 						<a href="#granta_drive_active.csv" onclick="setTimeout(location.reload.bind(location), 1)">Drive Active</a>
 						<br/>
 						<!--XRAY-->
@@ -90,15 +90,15 @@
 						<br/>
 						<!--Largus-->
 						Largus:
-						<a href="#largus_universal.csv" onclick="setTimeout(location.reload.bind(location), 1)">Largus универсал</a> / 
-						<a href="#largus_cross.csv" onclick="setTimeout(location.reload.bind(location), 1)">Largus Cross</a> / 
-						<a href="#largus_furgon.csv" onclick="setTimeout(location.reload.bind(location), 1)">Largus фургон</a> / 
-						<a href="#largus_furgon_cng.csv" onclick="setTimeout(location.reload.bind(location), 1)">Largus фургон CNG</a>
+						<a href="#largus_universal.csv" onclick="setTimeout(location.reload.bind(location), 1)">Универсал</a> / 
+						<a href="#largus_cross.csv" onclick="setTimeout(location.reload.bind(location), 1)">Cross</a> / 
+						<a href="#largus_furgon.csv" onclick="setTimeout(location.reload.bind(location), 1)">Фургон</a> / 
+						<a href="#largus_furgon_cng.csv" onclick="setTimeout(location.reload.bind(location), 1)">Фургон CNG</a>
 						<br/>
 						<!--Niva-->
 						Niva:
 						<a href="#niva_standard.csv" onclick="setTimeout(location.reload.bind(location), 1)">Niva</a> / 
-						<a href="#niva_offroad.csv" onclick="setTimeout(location.reload.bind(location), 1)">Niva Off-road</a>
+						<a href="#niva_offroad.csv" onclick="setTimeout(location.reload.bind(location), 1)">Off-road</a>
 						<br/>
 						<!--4x4-->
 						4x4:
