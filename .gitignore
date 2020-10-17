@@ -5,6 +5,7 @@
 *.so
 *.dylib
 .idea
+ladacsv
 
 
 # Test binary, built with `go test -c`

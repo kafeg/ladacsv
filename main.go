@@ -2,26 +2,31 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"github.com/PuerkitoBio/goquery"
 	"github.com/geziyor/geziyor"
 	"github.com/geziyor/geziyor/client"
 	"github.com/tidwall/gjson"
 	"log"
 	"os"
+	"os/signal"
 	"strings"
+	"syscall"
 )
 
 var currRegion = ""
 var currCity = ""
 
-var optPHPSESSID = "m5uv3qiiv7gb7h269bk57rpk20" //take it from browser from 'http://sklad.lada-direct.ru/' from the developer console
-const optTargetCarModelUrlTemplate = "http://sklad.lada-direct.ru/v2/cars/vesta/MODELNAME/prices.html"
+var optPHPSESSID = "" //take it from browser from 'http://sklad.lada-direct.ru/' from the developer console
+const optTargetCarModelUrlTemplate = "http://sklad.lada-direct.ru/v2/cars/MODELNAME/prices.html"
 var optTargetCarModelUrl = "" //change to your target car model
 var optOutputFileName = ""
+var interruptHandled = false
 
 func main() {
 	modelCodePtr := flag.String("model", "", "Model code")
 	outPtr := flag.String("out", "", "Output file name")
+	phpSessId := flag.String("session", "", "PHP Session Id")
 
 	flag.Parse()
 
@@ -37,6 +42,26 @@ func main() {
 		return
 	}
 
+	if (*phpSessId == "") {
+		println("Wrong PHP sesssion Id. Open https://www.lada.ru/ and copy Cookie from the browser console")
+		os.Exit(1)
+		return
+	}
+
+	optPHPSESSID = *phpSessId
+
+	// signals
+	sigs := make(chan os.Signal, 1)
+
+	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
+
+	go func() {
+		sig := <-sigs
+		fmt.Println()
+		fmt.Println(sig)
+		interruptHandled = true
+	}()
+
 	collectModelInfo(*modelCodePtr, *outPtr)
 }
 
@@ -45,10 +70,7 @@ func collectModelInfo(modelCode, outputFile string) {
 	optOutputFileName = outputFile
 
 	// remove target file
-	e := os.Remove(optOutputFileName)
-	if e != nil {
-		log.Fatal(e)
-	}
+	os.Remove(optOutputFileName)
 
 	// open output file
 	fo, err := os.OpenFile(optOutputFileName, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
@@ -100,7 +122,7 @@ func parseCities(g *geziyor.Geziyor, r *client.Response) {
 			cities.ForEach(func(cityKey, cityValue gjson.Result) bool {
 				currCity = cityKey.String() + "; " + cityValue.String()
 
-				geziyor.NewGeziyor(&geziyor.Options{
+				geziyor.NewGeziyor(&geziyor.Options {
 					StartRequestsFunc: func(g *geziyor.Geziyor) {
 						req, err := client.NewRequest("GET", optTargetCarModelUrl, nil)
 						if err != nil {
@@ -128,11 +150,10 @@ func parseCities(g *geziyor.Geziyor, r *client.Response) {
 					RobotsTxtDisabled: true,
 				}).Start()
 
-				return true // keep iterating
+				return !interruptHandled // keep iterating
 			})
 
-			println("")
-			return true // keep iterating
+			return !interruptHandled // keep iterating
 		})
 	})
 }
