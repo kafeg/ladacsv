@@ -116,11 +116,11 @@ func parseCities(g *geziyor.Geziyor, r *client.Response) {
 		regions := gjson.Parse(citiesJson)
 
 		regions.ForEach(func(regionKey, regionValue gjson.Result) bool {
-			currRegion = regionKey.String() + "; " + regionValue.Get("name").String()
+			currRegion = regionKey.String() + ", " + regionValue.Get("name").String()
 
 			cities := regionValue.Get("city")
 			cities.ForEach(func(cityKey, cityValue gjson.Result) bool {
-				currCity = cityKey.String() + "; " + cityValue.String()
+				currCity = cityKey.String() + ", " + cityValue.String()
 
 				geziyor.NewGeziyor(&geziyor.Options {
 					StartRequestsFunc: func(g *geziyor.Geziyor) {

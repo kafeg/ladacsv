@@ -8,6 +8,8 @@ Open http://sklad.lada-direct.ru/v2/cars/vesta/sw-cross/prices.html and copy cok
 Run the following command on Ubuntu >= 18.04 with installed Golang:
 ```./collect.sh <COPIED VALUE OF PHPSESSID>```
 
-Wait for collecting all models, then commit and push.
+Wait for collecting all models, a looong time ;-)
+
+Commit with ```git commit -am "Updated models `date --iso-8601=seconds`"```
 
 Check results on the https://kafeg.github.io/ladacsv
