@@ -55,8 +55,8 @@ fi
 
 COLLECT_TS=`date --iso-8601=seconds`
 
-rm -f csvlada.html
-cp csvlada.html.template index.html
+rm -f index.html
+cp index.html.template index.html
 
 sed -i "s/UPDATE_TS/${COLLECT_TS}/g" index.html
 
