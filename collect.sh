@@ -53,7 +53,7 @@ fi
 ./ladacsv -session=$SESSIONID -model=4x4/urban -out=n4x4_3doors_urban.csv
 ./ladacsv -session=$SESSIONID -model=4x4/urban5 -out=n4x4_5doors_urban.csv
 
-COLLECT_TS=`date --iso-8601=seconds`
+COLLECT_TS=`date --iso-8601`
 
 rm -f index.html
 cp index.html.template index.html

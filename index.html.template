@@ -102,10 +102,10 @@
 						<br/>
 						<!--4x4-->
 						4x4:
-						<a href="#4x4_3doors.csv" onclick="setTimeout(location.reload.bind(location), 1)">4x4 3 дв.</a> / 
-						<a href="#4x4_3doors_urban.csv" onclick="setTimeout(location.reload.bind(location), 1)">4x4 Urban 3 дв.</a> / 
-						<a href="#4x4_5doors.csv" onclick="setTimeout(location.reload.bind(location), 1)">4x4 5 дв.</a> / 
-						<a href="#4x4_5doors_urban.csv" onclick="setTimeout(location.reload.bind(location), 1)">4x4 Urban 5 дв.</a>
+						<a href="#n4x4_3doors.csv" onclick="setTimeout(location.reload.bind(location), 1)">4x4 3 дв.</a> / 
+						<a href="#n4x4_3doors_urban.csv" onclick="setTimeout(location.reload.bind(location), 1)">4x4 Urban 3 дв.</a> / 
+						<a href="#n4x4_5doors.csv" onclick="setTimeout(location.reload.bind(location), 1)">4x4 5 дв.</a> / 
+						<a href="#n4x4_5doors_urban.csv" onclick="setTimeout(location.reload.bind(location), 1)">4x4 Urban 5 дв.</a>
 						<br/>
 						<br/>
 						Обновлено: UPDATE_TS
