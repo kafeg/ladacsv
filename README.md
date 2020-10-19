@@ -10,6 +10,10 @@ Run the following command on Ubuntu >= 18.04 with installed Golang:
 
 Wait for collecting all models, a looong time ;-)
 
-Commit with ```git commit -am "Updated models `date --iso-8601=seconds`"```
+Commit with ```git commit -am "Updated models `date --iso-8601`"```
+
+Create tag ```git tag "v`date --iso-8601`"```
+
+Push ```git push; git push --tags```
 
 Check results on the https://kafeg.github.io/ladacsv
