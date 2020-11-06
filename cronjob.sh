@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# sudo apt-get install golang
 # crontab -e
 # 0 1 * * * /home/kafeg/dev/ladacsv/cronjob.sh
 
