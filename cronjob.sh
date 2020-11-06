@@ -9,6 +9,9 @@ echo "$(date): Start collecting" > /home/kafeg/dev/ladacsv/cron.log 2>&1
 
 cd /home/kafeg/dev/ladacsv/
 
+chmod a+x ./collect.sh
+chmod a+x ./push.sh
+
 ./collect.sh lol >> /home/kafeg/dev/ladacsv/cron.log 2>&1
 
 sleep 5
