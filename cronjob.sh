@@ -7,6 +7,8 @@ rm /home/kafeg/dev/ladacsv/cron.log
 
 echo "$(date): Start collecting" > /home/kafeg/dev/ladacsv/cron.log 2>&1
 
+cd /home/kafeg/dev/ladacsv/
+
 ./collect.sh lol >> /home/kafeg/dev/ladacsv/cron.log 2>&1
 
 sleep 5
