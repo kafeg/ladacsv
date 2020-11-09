@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"flag"
 	"fmt"
 	"github.com/PuerkitoBio/goquery"
@@ -12,6 +13,8 @@ import (
 	"os/signal"
 	"strings"
 	"syscall"
+	"sort"
+	"io"
 )
 
 var currRegion = ""
@@ -22,6 +25,72 @@ const optTargetCarModelUrlTemplate = "http://sklad.lada-direct.ru/v2/cars/MODELN
 var optTargetCarModelUrl = "" //change to your target car model
 var optOutputFileName = ""
 var interruptHandled = false
+
+func readLines(file string) (lines []string, err error) {
+	f, err := os.Open(file)
+	if err != nil {
+		return nil, err
+	}
+	defer f.Close()
+	r := bufio.NewReader(f)
+	for {
+		const delim = '\n'
+		line, err := r.ReadString(delim)
+		if err == nil || len(line) > 0 {
+			if err != nil {
+				line += string(delim)
+			}
+			lines = append(lines, line)
+		}
+		if err != nil {
+			if err == io.EOF {
+				break
+			}
+			return nil, err
+		}
+	}
+	return lines, nil
+}
+
+func writeLines(file string, lines []string, header string) (err error) {
+	f, err := os.Create(file)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+	w := bufio.NewWriter(f)
+	defer w.Flush()
+
+	_, err = w.WriteString(header)
+	if err != nil {
+		return err
+	}
+
+	for _, line := range lines {
+		_, err := w.WriteString(line)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func sortCSVFile(outputFile string) {
+	lines, err := readLines(outputFile)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+	header := lines[0]
+	lines[0] = ""
+	sort.Strings(lines)
+	fmt.Printf("%v", header)
+	err = writeLines(outputFile, lines, header)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+}
 
 func main() {
 	modelCodePtr := flag.String("model", "", "Model code")
@@ -63,6 +132,7 @@ func main() {
 	}()
 
 	collectModelInfo(*modelCodePtr, *outPtr)
+	sortCSVFile(*outPtr)
 }
 
 func collectModelInfo(modelCode, outputFile string) {
