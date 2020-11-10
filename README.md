@@ -7,7 +7,7 @@ To setup auto-collect:
 - cd ladacsv
 - chmod a+x *.sh
 - crontab -e
-- add ```0 1 * * * /home/kafeg/dev/ladacsv/cronjob.sh``` there
+- add ```0 1 * * * ~/ladacsv/cronjob.sh``` there
 - save crontab file and exit from the editor
 - wait
 
