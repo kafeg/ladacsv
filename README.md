@@ -7,7 +7,11 @@ To setup auto-collect:
 - cd ladacsv
 - chmod a+x *.sh
 - crontab -e
-- - 0 1 * * * /home/kafeg/dev/ladacsv/cronjob.sh
+- add ```0 1 * * * /home/kafeg/dev/ladacsv/cronjob.sh``` there
+- save crontab file and exit from the editor
+- wait
+
+For the manual run, just execute ```./cronjob.sh```
 
 So at the 01:00 AM every day collecting will starts. Collect time ~3-4 hours in very lite mode to not DDoS lada site, grabber makes requests one by one without parallelism
 
