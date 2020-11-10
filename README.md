@@ -1,19 +1,18 @@
 # ladacsv
-Parser of official Lada site to get all available cars
+Parser for all available cars from all dillers from the http://sklad.lada-direct.ru/
 
-Clone repository to the local machine
+To setup auto-collect:
+- cd ~/
+- git clone https://github.com/kafeg/ladacsv.git
+- cd ladacsv
+- chmod a+x *.sh
+- crontab -e
+- - 0 1 * * * /home/kafeg/dev/ladacsv/cronjob.sh
 
-Open http://sklad.lada-direct.ru/v2/cars/vesta/sw-cross/prices.html and copy cokkie PHPSESSID from the browser inspector
+So at the 01:00 AM every day collecting will starts. Collect time ~3-4 hours in very lite mode to not DDoS lada site, grabber makes requests one by one without parallelism
 
-Run the following command on Ubuntu >= 18.04 with installed Golang:
-```./collect.sh <COPIED VALUE OF PHPSESSID>```
+Currently I have cron job, which collect everything at night and publish all results every morning there: https://kafeg.github.io/ladacsv
 
-Wait for collecting all models, a looong time ;-)
+PS: Project is just for experiments with GoLang and does not targeting to abuse data or like that.
 
-Commit with ```git commit -am "Updated models `date --iso-8601`"```
-
-Create tag ```git tag "v`date --iso-8601`"```
-
-Push ```git push; git push --tags```
-
-Check results on the https://kafeg.github.io/ladacsv
+PPS: All grabbed data from the public sources, available on the official Lada site.
