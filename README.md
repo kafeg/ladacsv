@@ -13,7 +13,7 @@ To setup auto-collect:
 
 For the manual run, just execute ```./cronjob.sh```
 
-So at the 01:00 AM every day collecting will starts. Collect time ~3-4 hours in very lite mode to not DDoS lada site, grabber makes requests one by one without parallelism
+So at the 01:00 AM every day collecting will starts. Collect requires for ~3-4 hours in very lite and slow mode to not DDoS lada site, grabber makes requests one by one without parallelism and with very low load for the server.
 
 Currently I have cron job, which collect everything at night and publish all results every morning there: https://kafeg.github.io/ladacsv
 
