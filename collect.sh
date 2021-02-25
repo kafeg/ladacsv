@@ -30,7 +30,7 @@ fi
 ./ladacsv -session=$SESSIONID -model=granta/hatchback -out=granta_hatchback.csv
 ./ladacsv -session=$SESSIONID -model=granta/universal -out=granta_universal.csv
 ./ladacsv -session=$SESSIONID -model=granta/cross -out=granta_cross.csv
-./ladacsv -session=$SESSIONID -model=granta/school -out=granta_school.csv
+#./ladacsv -session=$SESSIONID -model=granta/school -out=granta_school.csv
 ./ladacsv -session=$SESSIONID -model=granta/drive-active -out=granta_drive_active.csv
 
 # XRAY
@@ -41,17 +41,24 @@ fi
 ./ladacsv -session=$SESSIONID -model=largus/universal -out=largus_universal.csv
 ./ladacsv -session=$SESSIONID -model=largus/cross -out=largus_cross.csv
 ./ladacsv -session=$SESSIONID -model=largus/furgon -out=largus_furgon.csv
-./ladacsv -session=$SESSIONID -model=largus/furgon-cng -out=largus_furgon_cng.csv
+#./ladacsv -session=$SESSIONID -model=largus/furgon-cng -out=largus_furgon_cng.csv
+
+# New-Largus
+./ladacsv -session=$SESSIONID -model=new-largus/universal -out=largus-new_universal.csv
+./ladacsv -session=$SESSIONID -model=new-largus/furgon -out=largus-new_furgon.csv
 
 # Niva
 ./ladacsv -session=$SESSIONID -model=niva/niva -out=niva_standard.csv
-./ladacsv -session=$SESSIONID -model=niva/off-road -out=niva_offroad.csv
+./ladacsv -session=$SESSIONID -model=niva/off-road -out=niva_offroad.csv #porbably candidate to remove
+./ladacsv -session=$SESSIONID -model=niva-travel/travel -out=niva_travel.csv
 
-# 4x4
-./ladacsv -session=$SESSIONID -model=4x4/3dv -out=n4x4_3doors.csv
-./ladacsv -session=$SESSIONID -model=4x4/5dv -out=n4x4_5doors.csv
-./ladacsv -session=$SESSIONID -model=4x4/urban -out=n4x4_3doors_urban.csv
-./ladacsv -session=$SESSIONID -model=4x4/urban5 -out=n4x4_5doors_urban.csv
+# Niva Legend (ex 4x4)
+#./ladacsv -session=$SESSIONID -model=4x4/3dv -out=n4x4_3doors.csv
+#./ladacsv -session=$SESSIONID -model=4x4/5dv -out=n4x4_5doors.csv
+#./ladacsv -session=$SESSIONID -model=4x4/urban -out=n4x4_3doors_urban.csv
+#./ladacsv -session=$SESSIONID -model=4x4/urban5 -out=n4x4_5doors_urban.csv
+./ladacsv -session=$SESSIONID -model=niva-legend/3dv -out=niva-legend_3doors.csv
+./ladacsv -session=$SESSIONID -model=niva-legend/5dv -out=niva-legend_5doors.csv
 
 COLLECT_TS=`date --iso-8601`
 
