@@ -163,6 +163,7 @@ func collectModelInfo(modelCode, outputFile string) {
 			g.Get("http://sklad.lada-direct.ru/", g.Opt.ParseFunc)
 		},
 		ParseFunc: parseCities,
+		RobotsTxtDisabled: true,
 	}).Start()
 }
 
