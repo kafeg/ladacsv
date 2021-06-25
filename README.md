@@ -3,6 +3,9 @@ Parser for all available cars from all dillers from the http://sklad.lada-direct
 
 To setup auto-collect:
 - cd ~/
+- mkdir dev
+- cd dev
+- sudo apt install golang
 - git clone https://github.com/kafeg/ladacsv.git
 - cd ladacsv
 - chmod a+x *.sh
