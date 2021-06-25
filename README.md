@@ -5,7 +5,7 @@ To setup auto-collect:
 - cd ~/
 - mkdir dev
 - cd dev
-- sudo apt install golang
+- install golang >= 14: https://www.jeremymorgan.com/tutorials/raspberry-pi/install-go-raspberry-pi/
 - git clone https://github.com/kafeg/ladacsv.git
 - cd ladacsv
 - chmod a+x *.sh
