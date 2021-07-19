@@ -1,6 +1,10 @@
 # ladacsv
 Parser for all available cars from all dillers from the http://sklad.lada-direct.ru/
 
+Forum: https://xn--80aal0a.xn--80asehdb/forum/lada-vesta-forum/11469-onlajn-spravochnik-po-avtomobiljam-lada-v-nalichii-u-dilerov.html
+
+UPD: No more supported from 19.07.21
+
 To setup auto-collect:
 - cd ~/
 - mkdir dev
